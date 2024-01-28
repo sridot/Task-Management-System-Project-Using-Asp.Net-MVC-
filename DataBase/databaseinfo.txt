@@ -6,4 +6,4 @@ Step 1: Create a database named TMSDB.
 
 Step 2: Open the *.sql file in SQL Server.
 
-Step 3: Execute the script.
+Step 3: Execute the script..
