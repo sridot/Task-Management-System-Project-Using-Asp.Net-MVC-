@@ -1,0 +1,72 @@
+﻿@model IEnumerable<TaskManagementSystem.ViewModel.TaskViewModel>
+@{
+    ViewBag.Title = "TaskList";
+}
+
+<div class="d-flex justify-content-between">
+    <h2>TaskList</h2>
+    @Html.ActionLink("Create Task", "CreateTask", null, new { @class = "btn btn-danger" })
+</div>
+<p>Welcome @User.Identity.Name</p>
+<hr />
+<div style="min-height:300px; height:auto;">
+    <table class="table table-hover">
+        <thead style="font-weight:bold;">
+            <tr>
+                <td>Task Id</td>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Date</td>
+                <td>Status</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count() !=0)
+            {
+                foreach (var task in Model)
+                {
+                    <tr>
+                        <td>@task.TaskId</td>
+                        <td>@task.Title</td>
+                        <td>@task.Description</td>
+                        <td>@task.Date</td>
+                        <td>
+                            @{
+                                string value = string.Empty;
+                                switch (task.Status)
+                                {
+                                    case 1:
+                                        value = "To Do";
+                                        break;
+                                    case 2:
+                                        value = "InProgress";
+                                        break;
+                                    case 3:
+                                        value = "Done";
+                                        break;
+                                    case 4:
+                                        value = "Abort";
+                                        break;
+
+                                }
+                            } @value
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { task.TaskId })
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6">
+                        No Records Available...
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
