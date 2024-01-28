@@ -1,0 +1,9 @@
+﻿//taskmanagementsystem_SQL_Script.sql
+
+You will find a *.sql file containing the actual database script, which means you do not need to create the database from scratch. Here's how to use that file in a few steps:
+
+Step 1: Create a database named TMSDB.
+
+Step 2: Open the *.sql file in SQL Server.
+
+Step 3: Execute the script.
