@@ -18,7 +18,6 @@ namespace TaskManagementSystem.Controllers
             _taskServices = new TaskServices();
         }
 
-
         // GET: Task
         public ActionResult TaskList()
         {
